@@ -1,0 +1,1249 @@
+﻿<Window  x:Class="CinemaWPF.LichChieu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="Phần mềm bán hàng" Height="700" Width="1300" ResizeMode="NoResize"
+        x:Name="lichchieu" 
+        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen" >
+
+    <Grid Margin="0,0,-286,-40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="740"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,740"/>
+        <TabControl x:Name="tab_banhang" HorizontalAlignment="Left" Height="750" VerticalAlignment="Top" Width="1300" Margin="0,50,0,-60" Padding="0" >
+            <TabItem Header="PHIM" Height="Auto" Margin="25,-3,-165,1" FontSize="25" BorderBrush="White">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="White" Offset="0.502"/>
+                        <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFE5E5E5" Margin="0,-2,-3,97" HorizontalAlignment="Left" Width="1298"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl x:Name="tab_phim" HorizontalAlignment="Left" Height="693" VerticalAlignment="Top" Width="1315" Margin="-1,2,-16,-81" Padding="0">
+                        <TabItem Header="Lịch Chiếu" FontSize="20" Margin="3,12,-7,-14">
+                            <Grid Background="#FFE5E5E5" Margin="-8,-7,13,7" RenderTransformOrigin="0.547,0.505">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ScrollViewer Margin="15,65,-29,40">
+                                    <Grid HorizontalAlignment="Left" Width="1077" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FFF30000" Margin="20,12,0,0">
+                                            <Grid HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="86" Background="White" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="72*"/>
+                                                    <ColumnDefinition Width="0*"/>
+                                                    <ColumnDefinition Width="13*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="16" Height="28" Margin="0,-5,-16,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="14" Foreground="White" ClipToBounds="True" Background="#FF169110" BorderThickness="0" Padding="6,2,5,5" HorizontalAlignment="Left" Width="29" Grid.Column="2"/>
+                                                <Label Content="180 phút" VerticalAlignment="Bottom" Background="#FFD3FBD3" Height="28" Margin="-15,-5,0,54" Padding="5,1,5,5" FontSize="14"/>
+                                                <TextBlock x:Name="tbl_tenphim1" HorizontalAlignment="Left" Margin="-15,20,-16,-5" TextWrapping="Wrap"  Text="Avenger: Endgame" VerticalAlignment="Top" Height="62" Width="117" Foreground="White" Padding="5,5,0,0" FontSize="18" FontStretch="Condensed" Background="#FF6C6161" Grid.ColumnSpan="3" LineHeight="25" FontWeight="SemiBold" ForceCursor="True"/>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc1"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="157,12,0,0" Padding="0" Click="btn_sc1_Click" >
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian1" Margin="15,18,-10,0" TextWrapping="Wrap" Text="09:00~12:10" VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap1" Text="1" Foreground="Black" Margin="0,30,50,20" HorizontalAlignment="Right" Width="12" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="284,12,0,0" Padding="0" Click="btn_sc2_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Background="#FFFF0A0A"/>
+
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,85,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock Name="tbl_tgian2" Text="10:00~13:10" FontSize="15" Foreground="Black" Margin="15,18,-15,-18"></TextBlock>
+                                                <TextBlock x:Name="tbl_rap2" Text="2" Foreground="Black" Margin="0,30,90,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="411,12,-25,0" Padding="0" Click="btn_sc3_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian3" Margin="15,18,-10,0" TextWrapping="Wrap" Text="13:40~16:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap3" Text="3" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="538,12,-53,0" Padding="0" Click="btn_sc4_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian4" Margin="15,18,-10,0" TextWrapping="Wrap" Text="17:10~20:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap4" Text="4" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="665,12,0,0" Padding="0" Click="btn_sc5_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian5" Margin="15,18,-10,0" TextWrapping="Wrap" Text="19:05~22:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap5" Text="5" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="792,12,-77,0" Padding="0" Click="btn_sc6_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian6" Margin="15,18,-14,0" TextWrapping="Wrap" Text="19:15~22:25 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap6" Text="2" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="88" BorderThickness="1"  Background="White" BorderBrush="#FFF30000" Margin="20,134,0,0">
+                                            <Grid HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="86" Background="White" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="72*"/>
+                                                    <ColumnDefinition Width="0*"/>
+                                                    <ColumnDefinition Width="13*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="16" Height="28" Margin="0,-5,-16,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="14" Foreground="White" ClipToBounds="True" Background="#FF169110" BorderThickness="0" Padding="6,2,5,5" HorizontalAlignment="Left" Width="29" Grid.Column="2"/>
+                                                <Label Content="120 phút" VerticalAlignment="Bottom" Background="#FFD3FBD3" Height="28" Margin="-15,-5,0,54" Padding="5,1,5,5" FontSize="14"/>
+                                                <TextBlock x:Name="tbl_tenphim2" HorizontalAlignment="Left" Margin="-15,20,-16,-5" TextWrapping="Wrap"  Text="Mắt Biếc" VerticalAlignment="Top" Height="62" Width="117" Foreground="White" Padding="5,5,0,0" FontSize="18" FontStretch="Condensed" Background="#FF6C6161" Grid.ColumnSpan="3" LineHeight="25" FontWeight="SemiBold" ForceCursor="True"/>
+                                            </Grid>
+                                        </Button>
+                                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="88" BorderThickness="1"  Background="White" BorderBrush="#FFF30000" Margin="20,251,0,-71">
+                                            <Grid HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="86" Background="White" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="72*"/>
+                                                    <ColumnDefinition Width="0*"/>
+                                                    <ColumnDefinition Width="13*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="All" Height="28" Margin="0,-5,-16,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="14" Foreground="White" ClipToBounds="True" Background="#FF05CBD4" BorderThickness="0" Padding="6,2,5,5" HorizontalAlignment="Left" Width="29" Grid.Column="2"/>
+                                                <Label Content="120 phút" VerticalAlignment="Bottom" Background="#FFD3FBD3" Height="28" Margin="-15,-5,0,54" Padding="5,1,5,5" FontSize="14"/>
+                                                <TextBlock x:Name="tbl_tenphim3" HorizontalAlignment="Left" Margin="-15,20,-16,-5" TextWrapping="Wrap"  Text="Frozen 2" VerticalAlignment="Top" Height="62" Width="117" Foreground="White" Padding="5,5,0,0" FontSize="18" FontStretch="Condensed" Background="#FF6C6161" Grid.ColumnSpan="3" LineHeight="25" FontWeight="SemiBold" ForceCursor="True"/>
+                                            </Grid>
+                                        </Button>
+                                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="88" BorderThickness="1"  Background="White" BorderBrush="#FFF30000" Margin="20,365,0,0">
+                                            <Grid HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="86" Background="White" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="72*"/>
+                                                    <ColumnDefinition Width="0*"/>
+                                                    <ColumnDefinition Width="13*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="18" Height="28" Margin="0,-5,-16,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="14" Foreground="White" ClipToBounds="True" Background="#FFFF0A0A" BorderThickness="0" Padding="6,2,5,5" HorizontalAlignment="Left" Width="29" Grid.Column="2"/>
+                                                <Label Content="120 phút" VerticalAlignment="Bottom" Background="#FFD3FBD3" Height="28" Margin="-15,-5,0,54" Padding="5,1,5,5" FontSize="14"/>
+                                                <TextBlock x:Name="tbl_tenphim4" HorizontalAlignment="Left" Margin="-15,20,-16,-5" TextWrapping="Wrap"  Text="Hai Phượng" VerticalAlignment="Top" Height="62" Width="117" Foreground="White" Padding="5,5,0,0" FontSize="18" FontStretch="Condensed" Background="#FF6C6161" Grid.ColumnSpan="3" LineHeight="25" FontWeight="SemiBold" ForceCursor="True"/>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="157,134,0,0" Padding="0" Click="btn_sc8_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian8" Margin="15,18,-10,0" TextWrapping="Wrap" Text="08:10~10:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap8" Text="4" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="284,134,0,0" Padding="0" Click="btn_sc9_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian9" Margin="15,18,-10,0" TextWrapping="Wrap" Text="12:10~14:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap9" Text="2" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="411,133,0,0" Padding="0" Click="btn_sc10_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Background="#FFFF0A0A"/>
+                                                <TextBlock Name="tbl_tgian10" Text="13:10~15:20" Foreground="Black" FontSize="16" Margin="15,20,-5,-20" HorizontalAlignment="Left" Width="90"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Margin="39,40,21,10"/>
+                                                <TextBox Height="65" Margin="-5,13,85,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap10" Text="5" Foreground="Black" Margin="0,30,88,20" />
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc11" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="538,133,0,0" Padding="0" Click="btn_sc11_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian11" Margin="15,18,-10,0" TextWrapping="Wrap" Text="17:40~19:40 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap11" Text="2" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc12" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="665,133,0,0" Padding="0" Click="btn_sc12_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian12" Margin="15,18,-10,0" TextWrapping="Wrap" Text="20:00~22:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox x:Name="tbl_rap12" Height="65" Margin="-5,13,0,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock Text="4" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc13" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="792,133,0,0" Padding="0" Click="btn_sc13_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian13" Margin="15,18,-10,0" TextWrapping="Wrap" Text="20:40~23:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap13" Text="5" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="157,253,0,0" Padding="0" Click="btn_sc14_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian14" Margin="15,18,-10,0" TextWrapping="Wrap" Text="09:00~11:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap14" Text="1" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="284,253,0,0" Padding="0" Click="btn_sc15_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian15" Margin="15,18,-10,0" TextWrapping="Wrap" Text="14:20~16:30 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap15" Text="2" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="157,364,0,0" Padding="0" Click="btn_sc18_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian18" Margin="15,18,-10,0" TextWrapping="Wrap" Text="13:10~15:20 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap18" Text="1" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc19" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="284,364,0,0" Padding="0" Click="btn_sc19_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Anh" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian19" Margin="15,18,-10,0" TextWrapping="Wrap" Text="19:10~21:20 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap19" Text="2" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="411,251,0,0" Padding="0" Click="btn_sc16_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="2D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FFFDB800" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Lồng tiếng" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian16" Margin="15,18,-10,0" TextWrapping="Wrap" Text="18:10~20:20 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap16" Text="3" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc17" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="538,251,0,0" Padding="0" Click="btn_sc17_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Lồng tiếng" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian17" Margin="15,18,-10,0" TextWrapping="Wrap" Text="17:00~19:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap17" Text="3" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                        <Button x:Name="btn_sc7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="89" BorderThickness="1"  Background="White" BorderBrush="#FF0A0A0A" AllowDrop="True" Margin="919,12,0,0" Padding="0" Click="btn_sc7_Click">
+                                            <Grid HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="100" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="62*"/>
+                                                    <ColumnDefinition Width="23*"/>
+                                                    <ColumnDefinition Width="15*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="3D" Height="22" Margin="-10,-9,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.368,-1.25" FontSize="11" Foreground="White" ClipToBounds="True" Background="#FF0074FF" BorderThickness="0" Padding="5,2,5,5" HorizontalAlignment="Left" Width="25"/>
+                                                <Label Content="Phụ đề Việt" VerticalAlignment="Bottom" Height="22" Margin="15,-9,-10,57" Padding="5,1,5,5" Foreground="White" FontSize="13" Grid.ColumnSpan="3" Background="#FFFF0A0A"/>
+                                                <TextBlock x:Name="tbl_tgian7" Margin="15,18,-10,0" TextWrapping="Wrap" Text="21:00~24:10 " VerticalAlignment="Top" Height="44" Background="Transparent" Foreground="Black" Padding="5,0,0,0" Grid.ColumnSpan="3" AllowDrop="True" FontSize="16" FontWeight="SemiBold"/>
+                                                <TextBlock Text="72/72" Foreground="Black" Grid.ColumnSpan="2" Margin="39,40,6,10"></TextBlock>
+                                                <TextBox Height="65" Margin="-5,13,47,-8" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="20" BorderThickness="0,0,1,0" BorderBrush="#FF494949" FontSize="16" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="0,5,0,0" Background="Transparent"/>
+                                                <TextBlock x:Name="tbl_rap7" Text="3" Foreground="Black" Margin="0,30,50,20" ></TextBlock>
+                                            </Grid>
+                                        </Button>
+                                    </Grid>
+                                </ScrollViewer>
+                                <TextBlock HorizontalAlignment="Left" Margin="292,35,0,0" TextWrapping="Wrap" Text="Ngày: " VerticalAlignment="Top"/>
+                                <DatePickerTextBox x:Name="dpk_ngaychieu" Text="25/11/2019" Margin="352,23,796,600" Padding="2,2,2,4" UseLayoutRounding="False" ></DatePickerTextBox>
+
+                            </Grid>
+                        </TabItem>
+                        <TabItem x:Name="tab_Ghengoi" Header="Ghế ngồi" Margin="22,12,-69,-14" FontSize="20" ScrollViewer.HorizontalScrollBarVisibility="Visible" Visibility="Hidden">
+                            <Grid Background="#FFE5E5E5" Margin="-2,-19,15,82">
+                                <Canvas Margin="4,30,-826,15" >
+
+
+                                    <Button x:Name="A1" Content="A1" Canvas.Left="158" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040" Click="A1_Click"/>
+                                    <Label Content="Tên Phim " Canvas.Top="10" Width="88" FontSize="15" Background="#FFC7C7C7" Height="36" Canvas.Left="-3"/>
+                                    <Image Height="26"  Source="E:\qtdacntt\Dự án\CinemaWPF\Hình\Frame 21.png" Canvas.Left="85" Canvas.Top="66" Width="736" OpacityMask="#FFFB0E0E"/>
+                                    <Label x:Name="lbl_hienthiphim"  Content="AVENGER: ENDGAME " Canvas.Left="85" Canvas.Top="10" Width="282" FontSize="15" Background="#FFFFF982" Height="36" FontWeight="ExtraBold"/>
+                                    <Label Content="RẠP" Canvas.Left="367" Canvas.Top="10" Width="45" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label x:Name="lbl_hienthirap" Content="4" Canvas.Left="412" Canvas.Top="10" Width="112" FontSize="15" Background="#FFFFF982" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold" HorizontalContentAlignment="Center"/>
+                                    <Label Content="Ngày chiếu" Canvas.Left="524" Canvas.Top="10" Width="88" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label x:Name="lbl_ngaychieu" Content="28/11/2019" Canvas.Left="612" Canvas.Top="10" Width="249" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                                    <Label Content="Thời gian" Canvas.Left="858" Canvas.Top="10" Width="138" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label x:Name="lbl_thoigian" Content="23:20" Canvas.Left="996" Canvas.Top="10" Width="301" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                                    <Button Click="A2_Click" x:Name="A2" Content="A2" Canvas.Left="197" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040" />
+                                    <Button Click="B1_Click"  x:Name="B1" Content="B1" Canvas.Left="158" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B2_Click" x:Name="B2" Content="B2" Canvas.Left="197" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040" ClickMode="Release"/>
+                                    <Button Click="A3_Click" x:Name="A3" Content="A3" Canvas.Left="274" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B3_Click" x:Name="B3" Content="B3" Canvas.Left="274" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A4_Click" x:Name="A4" Content="A4" Canvas.Left="313" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A5_Click" x:Name="A5" Content="A5" Canvas.Left="352" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B4_Click" x:Name="B4" Content="B4" Canvas.Left="313" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B5_Click" x:Name="B5" Content="B5" Canvas.Left="352" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A6_Click" x:Name="A6" Content="A6" Canvas.Left="389" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B6_Click" x:Name="B6" Content="B6" Canvas.Left="389" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A7_Click" x:Name="A7" Content="A7" Canvas.Left="467" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B7_Click" x:Name="B7" Content="B7" Canvas.Left="467" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A8_Click" x:Name="A8" Content="A8" Canvas.Left="506" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B8_Click" x:Name="B8" Content="B8" Canvas.Left="506" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A9_Click" x:Name="A9" Content="A9" Canvas.Left="545" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B9_Click" x:Name="B9" Content="B9" Canvas.Left="545" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B10_Click" x:Name="B10" Content="B10" Canvas.Left="584" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A10_Click" x:Name="A10" Content="A10" Canvas.Left="583" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040" RenderTransformOrigin="0.529,-0.528"/>
+                                    <Button Click="A11_Click" x:Name="A11" Content="A11" Canvas.Left="663" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B11_Click" x:Name="B11" Content="B11" Canvas.Left="663" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="B12_Click" x:Name="B12" Content="B12" Canvas.Left="703" Canvas.Top="180" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="A12_Click" x:Name="A12" Content="A12" Canvas.Left="703" Canvas.Top="144" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C1_Click" x:Name="C1" Content="C1" Canvas.Left="158" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C2_Click" x:Name="C2" Content="C2" Canvas.Left="197" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C3_Click" x:Name="C3" Content="C3" Canvas.Left="274" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C4_Click" x:Name="C4" Content="C4" Canvas.Left="313" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C5_Click" x:Name="C5" Content="C5" Canvas.Left="352" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C6_Click" x:Name="C6" Content="C6" Canvas.Left="389" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C7_Click" x:Name="C7" Content="C7" Canvas.Left="467" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C8_Click" x:Name="C8" Content="C8" Canvas.Left="506" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C9_Click"  x:Name="C9" Content="C9" Canvas.Left="545" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C10_Click" x:Name="C10" Content="C10" Canvas.Left="584" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C11_Click" x:Name="C11" Content="C11" Canvas.Left="663" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="C12_Click" x:Name="C12" Content="C12" Canvas.Left="703" Canvas.Top="216" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D1_Click" x:Name="D1" Content="D1" Canvas.Left="158" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D2_Click"  x:Name="D2" Content="D2" Canvas.Left="197" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D3_Click"  x:Name="D3" Content="D3" Canvas.Left="274" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button  Click="D4_Click"  x:Name="D4" Content="D4" Canvas.Left="313" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button  Click="D5_Click"  x:Name="D5" Content="D5" Canvas.Left="352" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D6_Click"  x:Name="D6" Content="D6" Canvas.Left="389" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D7_Click"  x:Name="D7" Content="D7" Canvas.Left="467" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D8_Click"  x:Name="D8" Content="D8" Canvas.Left="506" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D9_Click"  x:Name="D9" Content="D9" Canvas.Left="545" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D10_Click"  x:Name="D10" Content="D10" Canvas.Left="584" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D11_Click"  x:Name="D11" Content="D11" Canvas.Left="663" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="D12_Click"  x:Name="D12" Content="D12" Canvas.Left="703" Canvas.Top="252" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E1_Click"  x:Name="E1" Content="E1" Canvas.Left="158" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E2_Click" x:Name="E2" Content="E2" Canvas.Left="197" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040" RenderTransformOrigin="0.588,0.139"/>
+                                    <Button Click="E3_Click"  x:Name="E3" Content="E3" Canvas.Left="274" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E4_Click"  x:Name="E4" Content="E4" Canvas.Left="313" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E5_Click"  x:Name="E5" Content="E5" Canvas.Left="352" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E6_Click"  x:Name="E6" Content="E6" Canvas.Left="389" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E7_Click"   x:Name="E7" Content="E7" Canvas.Left="467" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E8_Click"   x:Name="E8" Content="E8" Canvas.Left="506" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E9_Click"   x:Name="E9" Content="E9" Canvas.Left="545" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E10_Click"   x:Name="E10" Content="E10" Canvas.Left="584" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E11_Click"   x:Name="E11" Content="E11" Canvas.Left="663" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="E12_Click"   x:Name="E12" Content="E12" Canvas.Left="703" Canvas.Top="288" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F1_Click"  x:Name="F1" Content="F1" Canvas.Left="158" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F2_Click"  x:Name="F2" Content="F2" Canvas.Left="197" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F3_Click"  x:Name="F3" Content="F3" Canvas.Left="274" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F4_Click"  x:Name="F4" Content="F4" Canvas.Left="313" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F5_Click"  x:Name="F5" Content="F5" Canvas.Left="352" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F6_Click"  x:Name="F6" Content="F6" Canvas.Left="389" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F7_Click"  x:Name="F7" Content="F7" Canvas.Left="467" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F8_Click"  x:Name="F8" Content="F8" Canvas.Left="506" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F9_Click"  x:Name="F9" Content="F9" Canvas.Left="545" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F10_Click"  x:Name="F10" Content="F10" Canvas.Left="584" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F11_Click"  x:Name="F11" Content="F11" Canvas.Left="663" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Button Click="F12_Click"  x:Name="F12" Content="F12" Canvas.Left="703" Canvas.Top="324" Width="34" Height="36" FontSize="15" Foreground="White" BorderThickness="0" BorderBrush="White" ForceCursor="True" Padding="0" Background="#FF424040"/>
+                                    <Grid Height="85" Canvas.Left="955" Canvas.Top="144" Width="150">
+                                        <Button x:Name="btn_CongNL"   Content="+" Margin="98,19,0,0" VerticalAlignment="Top" Width="34" Background="#FF838383" Cursor="None" FontSize="17" Height="33" HorizontalContentAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="-0.654,1.154" Padding="0,0,0,5" VerticalContentAlignment="Top" FontWeight="ExtraBlack" BorderThickness="0" BorderBrush="{x:Null}" Click="btn_CongNL_Click"/>
+                                        <Label x:Name="lbl_NL" Content="0" HorizontalAlignment="Left" Margin="23,48,0,-1" VerticalAlignment="Top" RenderTransformOrigin="-0.062,1.423" Background="Red" Foreground="#FFF9EDED" Width="75" Height="38" HorizontalContentAlignment="Center"  />
+
+                                        <Button x:Name="btn_TruNL"   Content="-" Margin="98,53,0,-1" VerticalAlignment="Top" Width="34" Background="#FFD8D8D8" Cursor="None" FontSize="17" Height="33" HorizontalContentAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="-0.654,1.154" Padding="0,0,0,5" VerticalContentAlignment="Top" FontWeight="ExtraBlack" BorderThickness="0" Foreground="Red" OpacityMask="#FFC32E2E" BorderBrush="{x:Null}" Click="btn_TruNL_Click"/>
+                                        <Label Content="80.000" HorizontalAlignment="Left" Margin="23,28,0,0" VerticalAlignment="Top" FontSize="15" Width="44" Padding="0"/>
+                                        <Label  Content="Người lớn" HorizontalAlignment="Left" Margin="23,12,0,0" VerticalAlignment="Top" FontSize="15" Width="70" Padding="0"/>
+
+                                    </Grid>
+                                    <Grid Height="85" Canvas.Left="955" Canvas.Top="224" Width="150">
+                                        <Button x:Name="btn_CongTE"   Content="+" Margin="0,24,18,28" Width="34" Background="#FF838383" Cursor="None" FontSize="17" Height="Auto" HorizontalContentAlignment="Center" HorizontalAlignment="Right" RenderTransformOrigin="-0.654,1.154" Padding="0,0,0,5" VerticalContentAlignment="Top" FontWeight="ExtraBlack" BorderThickness="0" BorderBrush="{x:Null}" Click="btn_CongTE_Click"/>
+                                        <Label x:Name="lbl_TE" Content="0" HorizontalAlignment="Left" Margin="22,54,0,-7" VerticalAlignment="Top" RenderTransformOrigin="-0.062,1.423" Background="Red" Foreground="#FFF9EDED" Width="75" Height="38" HorizontalContentAlignment="Center"  />
+
+                                        <Button x:Name="btn_TruTE"   Content="-" Margin="98,59,0,-7" Width="34" Background="#FFD8D8D8" Cursor="None" FontSize="17" Height="Auto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="-0.654,1.154" Padding="0,0,0,5" VerticalContentAlignment="Top" FontWeight="ExtraBlack" BorderThickness="0" Foreground="Red" OpacityMask="#FFC32E2E" BorderBrush="{x:Null}" Click="btn_TruTE_Click"/>
+                                        <Label Content="55.000" HorizontalAlignment="Left" Margin="23,34,0,0" VerticalAlignment="Top" FontSize="15" Width="44" Padding="0"/>
+                                        <Label  Content="Trẻ em" HorizontalAlignment="Left" Margin="23,18,0,0" VerticalAlignment="Top" FontSize="15" Width="70" Padding="0"/>
+
+                                    </Grid>
+                                    <Grid Height="85" Canvas.Left="955" Canvas.Top="305" Width="150">
+                                        <Button x:Name="btn_CongTV"   Content="+" Margin="98,28,0,24" Width="34" Background="#FF838383" Cursor="None" FontSize="17" Height="Auto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="-0.654,1.154" Padding="0,0,0,5" VerticalContentAlignment="Top" FontWeight="ExtraBlack" BorderThickness="0" BorderBrush="{x:Null}" Click="btn_CongTV_Click"/>
+                                        <Label x:Name="lbl_TV" Content="0" HorizontalAlignment="Left" Margin="22,58,0,-10" VerticalAlignment="Top" RenderTransformOrigin="-0.062,1.423" Background="Red" Foreground="#FFF9EDED" Width="75" Height="37" HorizontalContentAlignment="Center"  />
+
+                                        <Button x:Name="btn_TruTV"   Content="-" Margin="98,60,0,-9" Width="34" Background="#FFD8D8D8" Cursor="None" FontSize="17" Height="34" HorizontalContentAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="-0.654,1.154" Padding="0,0,0,5" VerticalContentAlignment="Top" FontWeight="ExtraBlack" BorderThickness="0" Foreground="Red" OpacityMask="#FFC32E2E" BorderBrush="{x:Null}" VerticalAlignment="Top" Click="btn_TruTV_Click"/>
+                                        <Label Content="45.000" HorizontalAlignment="Left" Margin="23,38,0,0" VerticalAlignment="Top" FontSize="15" Width="44" Padding="0"/>
+                                        <Label  Content="Thành viên" HorizontalAlignment="Left" Margin="23,22,0,0" VerticalAlignment="Top" FontSize="15" Width="75" Padding="0"/>
+
+                                    </Grid>
+                                    <Grid Height="75" Canvas.Left="228" Canvas.Top="412" Width="523">
+                                        <Label Content="" HorizontalAlignment="Left" Height="32" Margin="3,15,0,0" VerticalAlignment="Top" Width="34" Background="#FF343434"/>
+                                        <TextBlock HorizontalAlignment="Left" Height="32" Margin="48,20,0,0" TextWrapping="Wrap" Text="Ghế trống" VerticalAlignment="Top" Width="104"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="32" Margin="149,15,0,0" VerticalAlignment="Top" Width="34" Background="#FF38E848"/>
+                                        <TextBlock HorizontalAlignment="Left" Height="27" Margin="198,20,0,0" TextWrapping="Wrap" Text="Ghế đang chọn" VerticalAlignment="Top" Width="137"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="32" Margin="338,15,0,0" VerticalAlignment="Top" Width="34" Background="#FFE20F0F"/>
+                                        <TextBlock HorizontalAlignment="Left" Height="27" Margin="393,20,0,0" TextWrapping="Wrap" Text="Ghế đã mua" VerticalAlignment="Top" Width="115"/>
+                                    </Grid>
+                                    <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="1315" Background="#FF727272" Canvas.Left="-18" Canvas.Top="510">
+
+                                        <Button x:Name="btn_tieptheobanve" Height="Auto" Background="#FF303236" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="1100,0,-15,0" Click="btn_tieptheobanve_Click">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="ArrowRightBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="164,5,0,0" Height="35" Width="36" Foreground="#FFF1F1F1" />
+                                                <Label Content="Tiếp theo" Margin="30,0,50,2" Background="{x:Null}" Foreground="#FFF7F7F7" FontSize="25"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="1305" Background="#FF727272" Margin="-17,556,0,-556">
+                                            <Button Height="Auto" Background="#FF343434" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="10,0,1062,0">
+                                                <Grid Height="45" Width="210">
+                                                    <materialDesign:PackIcon Kind="ArrowLeftBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-11,6,0,0" Height="35" Width="51" />
+                                                    <Label Content="Quay lại" Margin="58,0,9,2" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419" FontSize="23"/>
+                                                </Grid>
+
+                                            </Button>
+                                            <Button Height="Auto" Background="#FF303236" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="1100,0,-15,0">
+                                                <Grid Height="45" Width="210">
+                                                    <materialDesign:PackIcon Kind="ArrowRightBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="164,5,0,0" Height="35" Width="36" Foreground="#FFF1F1F1" />
+                                                    <Label Content="Tiếp theo" Margin="30,0,50,2" Background="{x:Null}" Foreground="#FFF7F7F7" FontSize="25"/>
+                                                </Grid>
+
+                                            </Button>
+                                            <Button Height="Auto" Background="#FF515151" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="867,0,205,0">
+                                                <Grid Height="45" Width="210">
+                                                    <materialDesign:PackIcon Kind="Close" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-11,6,0,0" Height="35" Width="51" Foreground="Red" />
+                                                    <Label Content="Hủy tiến trình" Margin="38,1,-23,1" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419" FontSize="23"/>
+                                                </Grid>
+
+                                            </Button>
+                                        </Grid>
+                                        <Button x:Name="btn_quaylaisuatchieu" Height="Auto" Background="#FF303236" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="15,0,1070,0" Click="btn_quaylaisuatchieu_Click">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="ArrowRightBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-70,5,0,0" Height="35" Width="44" Foreground="#FFF1F1F1" >
+                                                    <materialDesign:PackIcon.RenderTransform>
+                                                        <TransformGroup>
+                                                            <ScaleTransform ScaleX="-1"/>
+                                                            <SkewTransform/>
+                                                            <RotateTransform/>
+                                                            <TranslateTransform/>
+                                                        </TransformGroup>
+                                                    </materialDesign:PackIcon.RenderTransform>
+                                                </materialDesign:PackIcon>
+                                                <Label Content="Quay lại" Margin="65,2,15,0" Background="{x:Null}" Foreground="#FFF7F7F7" FontSize="25"/>
+                                            </Grid>
+
+                                        </Button>
+                                    </Grid>
+
+
+                                </Canvas>
+                                <TextBlock HorizontalAlignment="Left" Margin="981,438,0,0" TextWrapping="Wrap" Text="Tổng ghế" VerticalAlignment="Top" Width="95"/>
+                                <Label Name="Tongghe" Content="0" Background="Yellow" Foreground="Black" HorizontalAlignment="Left" Margin="981,473,0,0" VerticalAlignment="Top" Width="75" Padding="30,5,5,5"/>
+                            </Grid>
+
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
+            </TabItem>
+            <TabItem x:Name="_FandB" Header="F&amp;B" Margin="0,-2,-190,0" Width="280" FontSize="25" HorizontalAlignment="Right" Padding="0,2">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+
+                <Canvas Margin="-4,-1,-1,-5" Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="1305" Background="#FF727272" Canvas.Left="-7" Canvas.Top="556">
+                        <Button x:Name="btn_quaylaichonghe" Height="55" Background="#FF343434" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="10,0,1062,0" VerticalAlignment="Top" Click="btn_quaylaichonghe_Click">
+                            <Grid Height="45" Width="210">
+                                <materialDesign:PackIcon Kind="ArrowLeftBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-11,6,0,0" Height="35" Width="51" />
+                                <Label Content="Quay lại" Margin="58,0,9,2" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419" FontSize="23"/>
+                            </Grid>
+
+                        </Button>
+                        <Button x:Name="btn_tieptheobapnuoc" Height="Auto" Background="#FF303236" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="1100,0,-15,0" Click="btn_tieptheobapnuoc_Click">
+                            <Grid Height="45" Width="210">
+                                <materialDesign:PackIcon Kind="ArrowRightBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="164,5,0,0" Height="35" Width="36" Foreground="#FFF1F1F1" />
+                                <Label Content="Tiếp theo" Margin="30,0,50,2" Background="{x:Null}" Foreground="#FFF7F7F7" FontSize="25"/>
+                            </Grid>
+
+                        </Button>
+                        <Button x:Name="btn_Huytientrinh1" Height="Auto" Background="#FF515151" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="867,0,205,0" Click="btn_Huytientrinh1_Click">
+                            <Grid Height="45" Width="210">
+                                <materialDesign:PackIcon Kind="Close" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-11,6,0,0" Height="35" Width="51" Foreground="Red" />
+                                <Label Content="Hủy tiến trình" Margin="38,1,-23,1" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419" FontSize="23"/>
+                            </Grid>
+
+                        </Button>
+                    </Grid>
+
+
+
+                    <Label Content="    Tên Phim " Canvas.Top="13" Width="110" FontSize="15" Background="#FFC7C7C7" Height="36" Canvas.Left="3"/>
+                    <Label x:Name="lblNumberOfSeats" Content=" " Canvas.Left="113" Canvas.Top="12" Width="263" FontSize="15" Background="#FFFFF982" Height="36" FontWeight="ExtraBold"/>
+                    <Label Content="RẠP" Canvas.Left="378" Canvas.Top="13" Width="45" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label x:Name="hienthirap" Content="-" Canvas.Left="423" Canvas.Top="13" Width="105" FontSize="15" Background="#FFFFF982" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold" HorizontalContentAlignment="Center"/>
+                    <Label Content="Ngày chiếu" Canvas.Left="525" Canvas.Top="13" Width="88" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="-" Canvas.Left="608" Canvas.Top="13" Width="125" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                    <Label Content="Giờ bắt đầu" Canvas.Left="733" Canvas.Top="13" Width="133" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="-" Canvas.Left="868" Canvas.Top="13" Width="142" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                    <Label Content="Giờ kết thúc" Canvas.Left="1008" Canvas.Top="13" Width="128" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="-" Canvas.Left="1133" Canvas.Top="13" Width="140" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                    <Grid Height="84" Canvas.Top="58" Width="445" Canvas.Left="10">
+                        <Label Content="Avenger: Endgame " FontSize="15" Background="#FFEAE6E6" Margin="0,0,198,54" FontWeight="Bold"/>
+                        <TextBlock TextWrapping="Wrap" Text="Người lớn - 6 " Margin="1,27,197,31" FontSize="13" Padding="4,0,0,0"/>
+                        <TextBlock TextWrapping="Wrap" Text="D1-6 " Margin="0,50,198,10" FontSize="13" Padding="4,0,0,0"/>
+                        <Label Content="80.000" Margin="288,8,73,6" Background="#FF535353" FontSize="22" Foreground="White" HorizontalContentAlignment="Right" Padding="5,18,5,5" BorderThickness="0" BorderBrush="#FFA8A8A8"/>
+                        <Button Content="" HorizontalAlignment="Left" Margin="373,8,-25,0" VerticalAlignment="Top" Width="97" Height="70" Background="#FF999999" Foreground="White" FontSize="17" BorderThickness="0" Padding="0,4"/>
+                        <Button Content="X" HorizontalAlignment="Left" Margin="469,8,-90,0" VerticalAlignment="Top" Width="66" Height="70" Background="#FF999999" Foreground="White" FontSize="30" BorderThickness="0" Padding="0,4"/>
+                    </Grid>
+                    <Grid Height="372" Canvas.Left="10" Canvas.Top="142" Width="553">
+                        <Grid HorizontalAlignment="Left" Width="536" Background="#FF535353" Height="33" VerticalAlignment="Top" Margin="0,0,-81,0">
+                            <Label Content="Tên sản phẩm" Foreground="White" FontSize="15" Margin="74,2,264,0"/>
+                            <Label Content="STT" Foreground="White" FontSize="15" Margin="5,2,407,0"/>
+                            <Label Content="Số lượng" Foreground="White" FontSize="15" Margin="261,3,77,-1"/>
+                            <Label Content="Thành tiền" Foreground="White" FontSize="15" Margin="365,4,-5,-2"/>
+                        </Grid>
+                        <materialDesign:ColorZone
+                        	Mode="PrimaryMid" Margin="53,323,72,0" RenderTransformOrigin="0.568,0.568">
+                            <StackPanel
+                        		Orientation="Horizontal"
+                        		Margin="2">
+                                <RadioButton
+                        			Style="{StaticResource MaterialDesignTabRadioButton}"
+                        			Margin="4"
+                        			IsChecked="True"
+                        			Content="NHẬN HÀNG NGAY" />
+                                <RadioButton
+                        			Style="{StaticResource MaterialDesignTabRadioButton}"
+                        			Margin="4"
+                        			IsChecked="False"
+                        			Content="NHẬN SAU" />
+                                <RadioButton
+                        			Style="{StaticResource MaterialDesignTabRadioButton}"
+                        			Margin="4"
+                        			IsChecked="False"
+                        			Content="NHẬN TẠI RẠP" />
+                            </StackPanel>
+                        </materialDesign:ColorZone>
+                        <Label Content="Hủy" Foreground="White" FontSize="15" Margin="478,2,-101,284"/>
+
+                    </Grid>
+                    <Grid Height="389" Canvas.Left="498" Canvas.Top="58" Width="598" >
+                        <TabControl HorizontalAlignment="Left" Height="389" VerticalAlignment="Top" Width="627" Margin="105,0,-134,0">
+                            <TabItem Header="Combo" FontSize="18"  Width="120" Padding="10 20 10 20" Foreground="#FF172BF1" FontWeight="Bold" Background="White" Margin="0">
+                                <Grid Background="White" Margin="-2,-2,-2,-6" OpacityMask="#FFBB5F5F">
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="14,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="70.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Couple Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="120.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Party Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="ADE Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="15,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Frozen Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Student" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="50.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Spider Man 1" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="140.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="15,222,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Spider Man 2" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="220.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Popcorn" FontSize="18"  Width="120" Foreground="#FF172BF1" FontWeight="Bold" Background="White">
+                                <Grid Background="White" Margin="-2,-5,-12,-3">
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="14,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="70.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Couple Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="120.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Party Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="ADE Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="15,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Frozen Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Student" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="50.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Spider Man 1" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="140.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+
+                            </TabItem>
+                            <TabItem Header="Drink" FontSize="18"  Width="120" Foreground="#FF172BF1" FontWeight="Bold" Background="White">
+                                <Grid Background="White">
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="14,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="70.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Couple Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="120.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Party Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="ADE Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="15,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Frozen Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Student" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="50.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Spider Man 1" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="140.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Snack" FontSize="18"  Width="120" Foreground="#FF172BF1" FontWeight="Bold" Background="White">
+                                <Grid Background="White">
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="14,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="70.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Couple Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="120.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Party Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="ADE Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="15,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Frozen Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Student" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="50.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Spider Man 1" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="140.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Khuyến mãi" FontSize="18" Foreground="#FF172BF1" FontWeight="Bold" Background="White" Margin="0,0,-8,-2">
+                                <Grid Background="White">
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="14,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="Solo Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="70.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="164,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Couple Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="120.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="314,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Party Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="465,13,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="ADE Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="180.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button HorizontalAlignment="Left" Height="60" Margin="15,117,0,0" VerticalAlignment="Top" Width="134" BorderBrush="Black" Background="#FFFBFBFB" BorderThickness="1" Padding="3,2,3,3" UseLayoutRounding="True">
+                                        <Grid Height="100" Width="162" Margin="0">
+                                            <TextBlock Text="Frozen Combo" Margin="-2,3,32,73" TextAlignment="Center" Background="White" Foreground="#FF0017FF" />
+                                            <Label Content="100.000" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" Background="#FFD3CECE" Padding="0,5,10,0" Height="31"/>
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                    <ScrollBar Canvas.Left="566" Canvas.Top="61" Height="390" Background="#FF464545"/>
+
+
+
+                </Canvas>
+            </TabItem>
+            <TabItem Header="THANH TOÁN" HorizontalAlignment="Left" Width="280" Margin="230,-2,-230,0" Visibility="Visible" FontSize="25" >
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFE5E5E5" Margin="-7,1,2,-8">
+                    <Canvas Margin="0,10,1,0" Height="707" VerticalAlignment="Top">
+                        <Label Content="Tên Phim " Canvas.Top="17" Width="122" FontSize="15" Background="#FFC7C7C7" Height="36" Canvas.Left="4"/>
+                        <Label x:Name="lblSoGhe" Content=" " Canvas.Left="117" Canvas.Top="17" Width="282" FontSize="15" Background="#FFFFF982" Height="36" FontWeight="ExtraBold"/>
+                        <Label Content="RẠP" Canvas.Left="396" Canvas.Top="17" Width="60" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label x:Name="Tenrap" Content="-" Canvas.Left="456" Canvas.Top="17" Width="73" FontSize="15" Background="#FFFFF982" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold" HorizontalContentAlignment="Center"/>
+                        <Label Content="Ngày chiếu" Canvas.Left="529" Canvas.Top="17" Width="95" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="-" Canvas.Left="624" Canvas.Top="17" Width="150" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                        <Label Content="Giờ bắt đầu" Canvas.Left="774" Canvas.Top="17" Width="123" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="-" Canvas.Left="896" Canvas.Top="17" Width="143" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                        <Label Content="Giờ kết thúc" Canvas.Left="1038" Canvas.Top="17" Width="113" FontSize="15" Background="#FFC7C7C7" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="-" Canvas.Left="1151" Canvas.Top="17" Width="150" FontSize="15" Background="#FFFFF982" Height="36" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                        <Grid Height="84" Canvas.Top="58" Width="445" Canvas.Left="10">
+                            <Label Content="Avenger: Endgame " FontSize="15" Background="#FFEAE6E6" Margin="0,0,198,54" FontWeight="Bold"/>
+                            <TextBlock TextWrapping="Wrap" Text="Người lớn - 2 " Margin="0,27,196,31"  FontSize="13" Padding="5,0,0,0"/>
+                            <TextBlock TextWrapping="Wrap" Text="D1-2 " Margin="0,50,198,10"  FontSize="13" Padding="5,0,0,0"/>
+                            <Label Content="80.000" Margin="241,1,124,9" Background="#FF535353" FontSize="22" Foreground="White" HorizontalContentAlignment="Right" Padding="5,18,5,5" BorderThickness="0" BorderBrush="#FFA8A8A8"/>
+                            <Button Content="Đổi ghế" HorizontalAlignment="Left" Margin="321,1,0,0" VerticalAlignment="Top" Width="73" Height="73" Background="#FF999999" Foreground="White" FontSize="15" BorderThickness="0" Padding="0,4,-6,4"/>
+                            <Button Content="X" HorizontalAlignment="Left" Margin="396,1,-10,0" VerticalAlignment="Top" Width="59" Height="73" Background="#FF999999" Foreground="White" FontSize="30" BorderThickness="0"/>
+                        </Grid>
+                        <Grid Height="179" Canvas.Left="11" Canvas.Top="183" Width="455">
+                            <Grid HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="445" Background="#FF535353" Margin="8,49,0,0">
+                                <Label Content="Tên sản phẩm" Foreground="White" FontSize="15" Margin="74,2,264,0"/>
+                                <Label Content="STT" Foreground="White" FontSize="15" Margin="5,2,407,0"/>
+                                <Label Content="Số lượng" Foreground="White" FontSize="15" Margin="192,2,146,0"/>
+                                <Label Content="Thành tiền" Foreground="White" FontSize="15" Margin="286,2,74,0"/>
+                                <Label Content="Hủy" Foreground="White" FontSize="15" Margin="389,0,-29,2"/>
+                            </Grid>
+                            <Label Content="D1" HorizontalAlignment="Left" Margin="16,-46,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="113" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="Người lớn" HorizontalAlignment="Left" Margin="129,-46,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="162" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="80.000" HorizontalAlignment="Left" Margin="272,-46,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="57" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="D2" HorizontalAlignment="Left" Margin="16,-12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="113" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="Người lớn" HorizontalAlignment="Left" Margin="129,-12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="162" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="80.000" HorizontalAlignment="Left" Margin="272,-12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="57" Background="#FFC7C7C7" FontSize="15"/>
+                            <Button Content="X" HorizontalAlignment="Left" Margin="387,-46,0,0" VerticalAlignment="Top" Width="61" Height="30" Background="#FF999999" Foreground="White" FontSize="20" BorderThickness="0"/>
+                            <Button Content="X" HorizontalAlignment="Left" Margin="387,-12,0,0" VerticalAlignment="Top" Width="61" Height="30" Background="#FF999999" Foreground="White" FontSize="20" BorderThickness="0"/>
+                            <Label Content="1" HorizontalAlignment="Left" Margin="7,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="113" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="Solo Combo" HorizontalAlignment="Left" Margin="106,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="164" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="1" HorizontalAlignment="Left" Margin="251,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="113" Background="#FFC7C7C7" FontSize="15"/>
+                            <Label Content="70.000" HorizontalAlignment="Left" Margin="315,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.263,0.474" Width="71" Background="#FFC7C7C7" FontSize="15"/>
+                            <Button Content="X" HorizontalAlignment="Left" Margin="389,95,0,0" VerticalAlignment="Top" Width="61" Height="30" Background="#FF999999" Foreground="White" FontSize="20" BorderThickness="0"/>
+
+                        </Grid>
+                        <Grid Height="276" Canvas.Left="611" Canvas.Top="138" Width="598" >
+                            <Label  Content="Tên khách hàng" HorizontalAlignment="Left" Height="32" Margin="-2,101,0,0" VerticalAlignment="Top" Width="194" Background="#FFE8F563" FontSize="15"/>
+                            <Label Content="Điểm thành viên" HorizontalAlignment="Left" Height="33" Margin="-2,141,-67,0" VerticalAlignment="Top" Width="667" Background="#FFE8F563" FontSize="15"/>
+                            <Label Content="-" HorizontalAlignment="Left" Height="26" Margin="329,246,0,0" VerticalAlignment="Top" Width="60" Background="#FFEAE6E6"/>
+                            <Button x:Name="btn_dtv" HorizontalAlignment="Left" Margin="167,101,-67,0" VerticalAlignment="Top" Width="498" Padding="0" Background="#FFE8F563" BorderThickness="0" BorderBrush="#FFEAE6E6" Height="32" Click="btn_dtv_Click" />
+
+                        </Grid>
+                        <ScrollBar Height="271" Canvas.Left="481" Canvas.Top="59" Background="#FF464545" RenderTransformOrigin="0.824,0.506"/>
+                        <Grid Height="185" Canvas.Top="344" Width="1225" Canvas.Left="46" Background="#FFC1BEBE">
+                            <Grid HorizontalAlignment="Left" Height="72" Margin="14,24,0,0" VerticalAlignment="Top" Width="125" Background="White">
+                                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Phương thức thanh toán" VerticalAlignment="Top" Background="White" FontSize="15" Width="105" Height="58" TextAlignment="Center" LineHeight="7"/>
+                            </Grid>
+                            <Grid HorizontalAlignment="Left" Height="72" Margin="14,101,0,0" VerticalAlignment="Top" Width="125" Background="White">
+                                <TextBlock HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" Text="Điểm" VerticalAlignment="Top" Background="White" FontSize="15" Width="105" Height="47" TextAlignment="Center" LineHeight="7"/>
+                            </Grid>
+                            <Button HorizontalAlignment="Left" Margin="153,24,0,0" VerticalAlignment="Top" Width="117" Height="72" Padding="0,4" Click="Button_Click">
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Credit Card" VerticalAlignment="Top" FontSize="15" Width="105" Height="22" TextAlignment="Center" LineHeight="7"/>
+                            </Button>
+                            <Button HorizontalAlignment="Left" Margin="280,25,0,0" VerticalAlignment="Top" Width="120" Height="72" Padding="0,4">
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Tiền mặt" VerticalAlignment="Top" FontSize="15" Width="105" Height="22" TextAlignment="Center" LineHeight="7"/>
+                            </Button>
+                            <Button HorizontalAlignment="Left" Margin="153,101,0,0" VerticalAlignment="Top" Width="117" Height="72" Padding="0,4">
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Điểm thành viên" VerticalAlignment="Top" FontSize="15" Width="105" Height="40" TextAlignment="Center" LineHeight="7"/>
+                            </Button>
+                            <Label Content="Tổng tiền" HorizontalAlignment="Left" Height="32" Margin="945,19,0,0" VerticalAlignment="Top" Width="122" Background="White" FontSize="15" Padding="10,5,5,5" FontWeight="Black"/>
+                            <Label Content="230.000" HorizontalAlignment="Left" Height="32" Margin="1067,19,0,0" VerticalAlignment="Top" Width="122" Background="#FF383434" FontSize="15" Foreground="White" Padding="50,5,5,5" FontWeight="Black"/>
+                            <Label Content="Giảm giá" HorizontalAlignment="Left" Height="32" Margin="945,53,0,0" VerticalAlignment="Top" Width="122" Background="White" FontSize="15" Padding="10,5,5,5" FontWeight="Black"/>
+                            <Label Content="0" HorizontalAlignment="Left" Height="32" Margin="1067,53,0,0" VerticalAlignment="Top" Width="122" Background="#FFB4B292" FontSize="15" Foreground="#FF0F0F0F" Padding="98,5,5,5" FontWeight="Black"/>
+                            <Label Content="Tiền nhận" HorizontalAlignment="Left" Height="32" Margin="945,87,0,0" VerticalAlignment="Top" Width="122" Background="White" FontSize="15" Padding="10,5,5,5" FontWeight="Black"/>
+                            <Label Content="0" HorizontalAlignment="Left" Height="32" Margin="1067,87,0,0" VerticalAlignment="Top" Width="122" Background="#FFB4B292" FontSize="15" Foreground="#FF0F0F0F" Padding="98,5,5,5" FontWeight="Black"/>
+                            <Label Content="Tiền thừa" HorizontalAlignment="Left" Height="32" Margin="945,121,0,0" VerticalAlignment="Top" Width="122" Background="White" FontSize="15" Padding="10,5,5,5" FontWeight="Black"/>
+                            <Label Content="0" HorizontalAlignment="Left" Height="32" Margin="1067,121,0,0" VerticalAlignment="Top" Width="122" Background="#FF383434" FontSize="15" Foreground="White" Padding="98,5,5,5" FontWeight="Black"/>
+                            <Button HorizontalAlignment="Left" Margin="410,25,0,0" VerticalAlignment="Top" Width="115" Height="72" Padding="0,4">
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mã quà tặng" VerticalAlignment="Top" FontSize="15" Width="105" Height="22" TextAlignment="Center" LineHeight="7"/>
+                            </Button>
+                            <Button HorizontalAlignment="Left" Margin="535,25,0,0" VerticalAlignment="Top" Width="135" Height="72">
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mã giảm giá" VerticalAlignment="Top" FontSize="15" Width="105" Height="22" TextAlignment="Center" LineHeight="7"/>
+                            </Button>
+
+
+                        </Grid>
+                        <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="1305" Background="#FF727272" Canvas.Left="-9" Canvas.Top="544">
+                            <Button x:Name="btn_quaylaiFB" Height="Auto" Background="#FF343434" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="15,0,1057,0" Click="btn_quaylaiFB_Click">
+                                <Grid Height="45" Width="210">
+                                    <materialDesign:PackIcon Kind="ArrowLeftBold" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-11,6,0,0" Height="35" Width="51" />
+                                    <Label Content="Quay lại" Margin="58,0,9,2" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419" FontSize="23"/>
+                                </Grid>
+
+                            </Button>
+                            <Button x:Name="btn_huytientrinh2" Height="Auto" Background="#FF515151" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" BorderThickness="0" Margin="845,0,227,0" Click="btn_huysuatchieu2_Click">
+                                <Grid Height="45" Width="210">
+                                    <materialDesign:PackIcon Kind="Close" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-11,6,0,0" Height="35" Width="51" Foreground="Red" />
+                                    <Label Content="Hủy tiến trình" Margin="38,1,-23,1" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419" FontSize="23"/>
+                                </Grid>
+
+                            </Button>
+                            <Button Height="Auto" Background="#FFF74040" BorderBrush="#FFF74040" Foreground="White" FontSize="18" Padding="0,4" Margin="1080,0,-10,0">
+                                <Grid Height="45" Width="210">
+                                    <materialDesign:PackIcon Kind="Check" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                    <Label Content="Hoàn tất thanh toán" Margin="32,3,-17,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                </Grid>
+
+                            </Button>
+                        </Grid>
+
+
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="QUẢN LÝ ĐƠN HÀNG" HorizontalAlignment="Left" Width="280" Margin="280,-5,-280,-2" FontSize="25">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFE5E5E5" Margin="-69,1,-4,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl HorizontalAlignment="Left" Height="740" VerticalAlignment="Top" Width="1368" Margin="0,0,0,-49">
+                        <TabItem Header="ĐƠN HÀNG SẮP TỚI" Padding="40,20" Margin="403,-2,-407,18" FontSize="20">
+                            <TabItem.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#FFF74141" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TabItem.Background>
+                            <Grid Background="#FFE5E5E5" Margin="63,-28,-3,13">
+                                <Grid HorizontalAlignment="Left" Height="650" Margin="10,10,-16,0" VerticalAlignment="Top" Width="1292">
+                                    <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="1305" Background="#FF727272" Margin="-8,500,-5,0">
+                                        <Button Height="Auto" Background="#FFF74040" BorderBrush="#FFF74040" Foreground="White" FontSize="18" Padding="0,4" Margin="900,0,170,0" BorderThickness="0">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="Autorenew" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                                <Label Content="Làm mới" Margin="58,3,-43,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Button Height="Auto" Background="#FF1CA02E" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="665,0,405,0" BorderThickness="0">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="Check" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-3,1,0,0" Height="35" Width="51" />
+                                                <Label Content="Xác nhận tất cả" Margin="43,3,-28,-1" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Button Height="Auto" Background="#FF9C5704" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="430,0,640,0" BorderThickness="0">
+                                            <Grid Height="50" Width="220">
+                                                <materialDesign:PackIcon Kind="BallotOutline" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                                <Label Content="Kiểm soát lượng hàng" Margin="27,3,-12,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Button Height="Auto" Background="#FF04959C" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="195,0,875,0" BorderThickness="0">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="LocalPrintShop" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                                <Label Content="In Hóa đơn" Margin="63,3,-48,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                            </Grid>
+
+                                        </Button>
+                                    </Grid>
+                                    <Grid Height="60" Margin="50,10,-8,0" VerticalAlignment="Top">
+
+                                        <Label Content="Mã hóa đơn" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="181" Margin="0,24,0,0" FontSize="20" Padding="10,5,5,5"/>
+                                        <Label Content="Tên khách hàng" HorizontalAlignment="Left" Background="#FF646464" Foreground="White" Width="213" Margin="177,24,0,0" FontSize="20" Padding="5,5,5,4" Height="36" VerticalAlignment="Top"/>
+                                        <Label Content="Chi tiết đơn hàng" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="283" Margin="380,24,0,0" FontSize="20" Height="36" Padding="5,5,5,3"/>
+                                        <Label Content="Thời gian thanh toán" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="278" Margin="635,24,0,0" FontSize="20" Height="36" Padding="5,5,5,3"/>
+                                        <Label Content="Trạng thái" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="225" Margin="875,24,0,0" FontSize="20" Height="36" Padding="5,5,5,3"/>
+                                        <Label Content="Xác nhận" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="145" Margin="1060,24,0,0" FontSize="20" Height="36" Padding="20,5,0,3"/>
+                                    </Grid>
+                                    <TextBlock HorizontalAlignment="Left" Margin="51,78,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="184"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="229,78,0,0" TextWrapping="Wrap" Text="Lê Văn A" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="261"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="444,78,0,0" TextWrapping="Wrap" Text="Chi tiết" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="276"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="690,78,0,0" TextWrapping="Wrap" Text="11:12:00 22/11/2019" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="260"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="904,78,0,0" TextWrapping="Wrap" Text="Nhận hàng ngay" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="201"/>
+                                    <Button Content="O" HorizontalAlignment="Left" Margin="1150,78,0,0" VerticalAlignment="Top" Width="56" BorderBrush="{x:Null}" BorderThickness="0" Background="#FFE82D2D" Foreground="White" Height="37" RenderTransformOrigin="0.533,-1.514" Padding="0,4"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="445,130,0,0" TextWrapping="Wrap" Text="Chi tiết" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="276"/>
+                                    <CheckBox Content="" HorizontalAlignment="Left" Margin="18,135,0,0" VerticalAlignment="Top" Height="30"/>
+                                    <CheckBox Content="" HorizontalAlignment="Left" Margin="18,85,0,0" VerticalAlignment="Top" Height="30" RenderTransformOrigin="1,-0.667"/>
+                                </Grid>
+                                <TextBlock HorizontalAlignment="Left" Margin="61,140,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="184"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="239,140,0,0" TextWrapping="Wrap" Text="Lê Văn A" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="221"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="700,140,0,0" TextWrapping="Wrap" Text="11:12:00 22/11/2019" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="260"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="914,140,0,0" TextWrapping="Wrap" Text="Nhận hàng ngay" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="201"/>
+                                <Button Content="O" HorizontalAlignment="Left" Margin="1160,140,0,0" VerticalAlignment="Top" Width="56" BorderBrush="{x:Null}" BorderThickness="0" Background="#FFE82D2D" Foreground="White" Height="37" RenderTransformOrigin="0.533,-1.514" Padding="0,4"/>
+                                <Grid HorizontalAlignment="Left" Height="70" Margin="5,-65,-7,0" VerticalAlignment="Top" Width="1300" Background="White"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="ĐƠN HÀNG GIAO TẠI CHỖ" Padding="40,20" Margin="440,-2,-440,17" FontSize="20">
+                            <TabItem.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#FFDE2828" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TabItem.Background>
+                            <Grid Background="#FFE5E5E5" Margin="-1,40,1,-41">
+                                <Grid Background="#FFE5E5E5" Margin="63,-28,-3,13">
+                                    <Grid HorizontalAlignment="Left" Height="650" Margin="10,10,-16,0" VerticalAlignment="Top" Width="1292">
+                                        <Grid Height="60" Margin="50,10,-8,0" VerticalAlignment="Top">
+                                            <Label Content="Mã hóa đơn" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="181" Margin="0,24,0,0" FontSize="20" Padding="10,5,5,5"/>
+                                            <Label Content="Tên khách hàng" HorizontalAlignment="Left" Background="#FF646464" Foreground="White" Width="213" Margin="140,24,0,0" FontSize="20" Padding="5,5,5,4" Height="36" VerticalAlignment="Top"/>
+                                            <Label Content="Chi tiết đơn hàng" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="283" Margin="322,24,0,0" FontSize="20" Height="36" Padding="5,5,5,3"/>
+                                            <Label Content="Thời gian thanh toán" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="278" Margin="517,24,0,0" FontSize="20" Height="36" Padding="5,5,5,3"/>
+                                            <Label Content="Thông tin chỗ ngồi" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="300" Margin="775,24,0,0" FontSize="20" Height="36" Padding="5,5,5,3"/>
+                                            <Label Content="Xác nhận" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF646464" Foreground="White" Width="145" Margin="1060,24,0,0" FontSize="20" Height="36" Padding="20,5,0,3"/>
+                                        </Grid>
+                                        <TextBlock HorizontalAlignment="Left" Margin="51,78,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="184"/>
+                                        <TextBlock HorizontalAlignment="Left" Margin="204,78,0,0" TextWrapping="Wrap" Text="Lê Văn A" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="261"/>
+                                        <TextBlock HorizontalAlignment="Left" Margin="380,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="0" Width="296" Height="37" ScrollViewer.CanContentScroll="True"><InlineUIContainer>
+                                        		<Button Content="Xem chi tiết" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" RenderTransformOrigin="-3.4,-5.156" Padding="16,3,16,4" Height="37" BorderThickness="0"/>
+                                        	</InlineUIContainer></TextBlock>
+                                        <TextBlock HorizontalAlignment="Left" Margin="570,78,0,0" TextWrapping="Wrap" Text="11:12:00 22/11/2019" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="260"/>
+                                        <TextBlock HorizontalAlignment="Left" Margin="824,78,0,0" TextWrapping="Wrap" Text="Mắt Biếc/ 21:00/ R2/.." VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="218"/>
+                                        <Button Content="O" HorizontalAlignment="Left" Margin="1150,78,0,0" VerticalAlignment="Top" Width="56" BorderBrush="{x:Null}" BorderThickness="0" Background="#FFE82D2D" Foreground="White" Height="37" RenderTransformOrigin="0.533,-1.514" Padding="0,4"/>
+                                        <CheckBox Content="" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Height="30" RenderTransformOrigin="1,-0.667"/>
+                                        <CheckBox Content="" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Height="30" RenderTransformOrigin="1,-0.667"/>
+                                    </Grid>
+                                    <TextBlock HorizontalAlignment="Left" Margin="61,140,0,0" TextWrapping="Wrap" Text="000001" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="184"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="215,140,0,0" TextWrapping="Wrap" Text="Lê Văn A" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="261"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="390,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="0" Width="276" Height="37"><InlineUIContainer>
+                                    		<Button Content="Xem chi tiết" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" RenderTransformOrigin="-3.4,-5.156" Padding="16,0,16,4" BorderThickness="0" Height="37"/>
+                                    	</InlineUIContainer></TextBlock>
+                                    <TextBlock HorizontalAlignment="Left" Margin="580,140,0,0" TextWrapping="Wrap" Text="11:12:00 22/11/2019" VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="260"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="837,140,0,0" TextWrapping="Wrap" Text="Frozen2/21:10/R3/..." VerticalAlignment="Top" Background="#FFF3FFA7" Padding="5" Width="215" Height="35"/>
+                                    <Button Content="O" HorizontalAlignment="Left" Margin="1160,140,0,0" VerticalAlignment="Top" Width="56" BorderBrush="{x:Null}" BorderThickness="0" Background="#FFE82D2D" Foreground="White" Height="37" RenderTransformOrigin="0.533,-1.514" Padding="0,4"/>
+                                    <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="1310" Background="#FF727272" Margin="-8,470,0,0">
+                                        <Button Height="Auto" Background="#FFF74040" BorderBrush="#FFF74040" Foreground="White" FontSize="18" Padding="0,4" Margin="900,0,170,0" BorderThickness="0">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="Autorenew" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                                <Label Content="Làm mới" Margin="58,3,-43,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Button Height="Auto" Background="#FF1CA02E" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="665,0,405,0" BorderThickness="0">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="Check" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-3,1,0,0" Height="35" Width="51" />
+                                                <Label Content="Xác nhận tất cả" Margin="43,3,-28,-1" Foreground="#DDFFFFFF" RenderTransformOrigin="0.595,0.419"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Button Height="Auto" Background="#FF9C5704" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="430,0,640,0" BorderThickness="0">
+                                            <Grid Height="50" Width="220">
+                                                <materialDesign:PackIcon Kind="BallotOutline" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                                <Label Content="Kiểm soát lượng hàng" Margin="27,3,-12,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                            </Grid>
+
+                                        </Button>
+                                        <Button Height="Auto" Background="#FF04959C" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="195,0,875,0" BorderThickness="0">
+                                            <Grid Height="45" Width="210">
+                                                <materialDesign:PackIcon Kind="LocalPrintShop" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="-13,4,0,0" Height="34" Width="51" />
+                                                <Label Content="In Hóa đơn" Margin="63,3,-48,-1" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                                            </Grid>
+
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <materialDesign:ColorZone
+        	Mode="PrimaryDark"
+        	Background="#111111" Height="50" Margin="0,0,286,690" VerticalAlignment="Bottom" >
+            <Grid HorizontalAlignment="Left" Margin="0,0,-5,0" Width="1305" Height="60" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Right" Orientation ="Horizontal"  Width="56" Height="40" HorizontalAlignment="Right" 
+                                Background="Transparent" VerticalAlignment="Top" Margin="0,10,0,0">
+                        <StackPanel.Resources>
+                            <Style TargetType="Menu">
+                                <Setter Property="Margin" Value="2 4 2 4"></Setter>
+                                <Setter Property="Width" Value="40"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
+                        <Menu x:Name="Thongbao" IsMainMenu="True" Background="#111111" Width="93" >
+                            <MenuItem BorderBrush="#111111"  Width="39" Height="33" RenderTransformOrigin="1.458,0.531" Foreground="#FFF8F5F5" Padding="0" >
+                                <MenuItem.Background >
+                                    <ImageBrush ImageSource="E:\qtdacntt\Dự án\CinemaWPF\Hình\Frame 22.png"/>
+                                </MenuItem.Background>
+                                <MenuItem Header="Kết Sổ" x:Name="_KetSo" Foreground="Black" FontSize="13" Background="AntiqueWhite" Height="41" />
+                                <MenuItem Header="Xem thông báo" x:Name="_Thongbao" Foreground="Black" FontSize="13" Background="AntiqueWhite" Height="44"/>
+                                <MenuItem Header="Đăng Xuất" x:Name="_Dangxuat" Foreground="Black" FontSize="13" Background="AntiqueWhite" Click="_Dangxuat_Click" Height="53"/>
+                            </MenuItem>
+                        </Menu>
+
+                    </StackPanel>
+                </DockPanel>
+
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-6.93,-4.459" Background="#FF528316" Foreground="#DDFFFFFF" OpacityMask="#FFE20000" Height="50" Padding="5,8,5,5" Width="125" FontSize="15" Margin="0,10,0,0"><Run Text="BÁN HÀNG"/><LineBreak/><Run Text="KATANAPOS1.0"/></TextBlock>
+            </Grid>
+        </materialDesign:ColorZone>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="485,415,0,0" VerticalAlignment="Top" Width="100"/>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+
+
+
+    </Grid>
+
+</Window>

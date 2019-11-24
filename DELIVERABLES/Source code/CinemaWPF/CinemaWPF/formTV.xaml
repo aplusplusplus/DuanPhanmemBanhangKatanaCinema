@@ -1,0 +1,44 @@
+﻿<Window x:Class="CinemaWPF.formTV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FormThanhvien" Height="330.426" Width="400"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" BorderThickness="0" Background="White" >
+
+    <Grid Background="White">
+        <Grid HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="400" Background="Black">
+            <Label Content="Kiểm tra Thành viên" HorizontalAlignment="Left" Margin="124,5,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="15"/>
+        </Grid>
+        <Button x:Name="btn_xacnhantv" Canvas.Left="1026" Canvas.Top="608"  Background="#FFF74040" BorderBrush="#FFF74040" Foreground="White" FontSize="18" Padding="0,4" Margin="40,262,197,22" Height="Auto">
+            <Grid Height="45" Width="210">
+                <materialDesign:PackIcon Kind="Check" FontSize="100"  Margin="5,-2,0,0" Height="34" Width="51" />
+                <Label Content="Xác nhận " Margin="50,-2,-35,4" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+            </Grid>
+
+        </Button>
+        <Grid Margin="95,30,-95,-30">
+            <Grid HorizontalAlignment="Left" Height="228" Margin="-40,27,0,0" VerticalAlignment="Top" Width="312">
+                <Label Content="Mã Card" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FFBFBFBF" Width="110" BorderThickness="2,0,0,0" BorderBrush="Red" FontSize="15"/>
+                <Label Content="Số điện thoại" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Background="#FFBFBFBF" Width="110" BorderThickness="2,0,0,0" BorderBrush="Red" FontSize="15"/>
+                <Label Content="Mã thành viên" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Background="#FFBFBFBF" Width="110" BorderThickness="2,0,0,0" BorderBrush="Red" FontSize="15"/>
+                <Label Content="Tên" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Background="#FFBFBFBF" Width="110" BorderThickness="2,0,0,0" BorderBrush="Red" FontSize="15"/>
+                <TextBox HorizontalAlignment="Left" Height="30" Margin="120,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" BorderThickness="0" Background="#FFF9EF88"/>
+                <TextBox HorizontalAlignment="Left" Height="30" Margin="120,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" BorderThickness="0" Background="#FFF9EF88"/>
+                <TextBox HorizontalAlignment="Left" Height="30" Margin="120,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" BorderThickness="0" Background="#FFF9EF88"/>
+                <TextBox HorizontalAlignment="Left" Height="30" Margin="120,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" BorderThickness="0" Background="#FFF9EF88"/>
+                <Label Content="Điểm" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Background="#FFBFBFBF" Width="110" BorderThickness="2,0,0,0" BorderBrush="Red" FontSize="15"/>
+                <TextBox HorizontalAlignment="Left" Height="30" Margin="120,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" BorderThickness="0" Background="#FFF9EF88"/>
+            </Grid>
+            <Button x:Name="btn_Huytv" Height="Auto" Background="#FF232323" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Padding="0,4" Margin="125,230,112,52" RenderTransformOrigin="0.355,0.5" Click="btn_Huytv_Click">
+                <Grid Height="45" Width="210" OpacityMask="#FF4D0F0F">
+                    <materialDesign:PackIcon Kind="Close" FontSize="100" RenderTransformOrigin="1.375,1.312" Margin="4,1,0,0" Height="34" Width="51" />
+                    <Label Content="Hủy " Margin="50,-2,-35,4" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+                </Grid>
+
+            </Button>
+
+        </Grid>
+
+    </Grid>
+</Window>
